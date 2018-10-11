@@ -9,7 +9,7 @@ exports.exec = async (ESXBot, message, args) => {
     if (args.length < 1) {
       let guildSettings = await ESXBot.db.get(`SELECT greetMessage FROM guildSettings WHERE guildID=${message.guild.id}`);
 
-      let greetMessage = `Not set. Set greeting message using \`${this.help.name} <Message>\``;
+      let greetMessage = `Não configurado. Definir mensagem de saudação usando \`${this.help.name} <Message>\``;
       if (guildSettings.greetMessage) {
         greetMessage = await ESXBot.functions.decodeString(guildSettings.greetMessage);
       }
@@ -17,7 +17,7 @@ exports.exec = async (ESXBot, message, args) => {
       message.channel.send({
         embed: {
           color: ESXBot.colors.BLUE,
-          title: 'Greeting Message',
+          title: 'Mensagem de saudação',
           description: greetMessage
         }
       }).catch(e => {
@@ -33,7 +33,7 @@ exports.exec = async (ESXBot, message, args) => {
       message.channel.send({
         embed: {
           color: ESXBot.colors.GREEN,
-          title: 'Greeting Message Set',
+          title: 'Conjunto de mensagens de saudação',
           description: args
         }
       }).catch(e => {
