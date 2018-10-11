@@ -16,15 +16,15 @@ exports.exec = async (ESXBot, message, args) => {
     message.channel.send({
       embed: {
         color: 10181046,
-        description: 'These are the people who contribute to the development of the ESXBot on [GitHub](https://github.com/esxbot/ESXBot).',
+        description: 'Estas são as pessoas que contribuem para o desenvolvimento do ESXBot em [GitHub](https://github.com/esxbot/ESXBot).',
         fields: [
           {
-            name: 'Contributors',
+            name: 'Colaboradores',
             value: contributors.slice(i * 25, (i * 25) + 25).join('\n')
           }
         ],
         footer: {
-          text: `Page: ${i + 1} of ${noOfPages > parseInt(noOfPages) ? parseInt(noOfPages) + 1 : parseInt(noOfPages)} • https://github.com/esxbot/ESXBot`
+          text: `Página: ${i + 1} de ${noOfPages > parseInt(noOfPages) ? parseInt(noOfPages) + 1 : parseInt(noOfPages)} • https://github.com/esxbot/ESXBot`
         }
       }
     }).catch(e => {
