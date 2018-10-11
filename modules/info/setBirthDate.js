@@ -47,7 +47,7 @@ exports.exec = async (ESXBot, message, args) => {
     if (!user) {
       return message.channel.send({
         embed: {
-          description: `<@${message.author.id}> you didn't had a profile yet. I've now created your profile. Now you can use the command again to set your birth date.`
+          description: `<@${message.author.id}> você ainda não tinha um perfil. Eu criei agora seu perfil. Agora você pode usar o comando novamente para definir sua data de nascimento.`
         }
       }).catch(e => {
         ESXBot.log.error(e);
