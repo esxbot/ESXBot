@@ -15,7 +15,7 @@ exports.exec = (ESXBot, message) => {
       color: ESXBot.colors.BLUE,
       fields: [
         {
-          name: `${user.bot ? 'Bot' : 'User'}`,
+          name: `${user.bot ? 'Bot' : 'Usuário'}`,
           value: user.tag,
           inline: true
         },
