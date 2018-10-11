@@ -30,10 +30,10 @@ exports.exec = (ESXBot, message, args) => {
   message.channel.send({
     embed: {
       color: ESXBot.colors.BLUE,
-      title: 'Emoji info',
+      title: 'Informações Emoji',
       fields: [
         {
-          name: 'Name',
+          name: 'Nome',
           value: args.name,
           inline: true
         },
@@ -43,7 +43,7 @@ exports.exec = (ESXBot, message, args) => {
           inline: true
         },
         {
-          name: 'Created At',
+          name: 'Criado em',
           value: args.createdAt.toUTCString(),
           inline: true
         }
