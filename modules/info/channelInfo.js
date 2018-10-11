@@ -16,10 +16,10 @@ exports.exec = (ESXBot, message, args) => {
   if (channel) {
     let title;
     if (channel.type === 'text') {
-      title = 'Text Channel Info';
+      title = 'Informações do canal de texto';
     }
     else {
-      title = 'Voice Channel Info';
+      title = 'Informações do canal de voz';
     }
     message.channel.send({
       embed: {
@@ -27,7 +27,7 @@ exports.exec = (ESXBot, message, args) => {
         title: title,
         fields: [
           {
-            name: 'Name',
+            name: 'Nome',
             value: channel.name,
             inline: true
           },
@@ -37,17 +37,17 @@ exports.exec = (ESXBot, message, args) => {
             inline: true
           },
           {
-            name: 'Topic',
+            name: 'Tópico',
             value: (channel.topic === null || channel.topic.length < 2) ? '-' : channel.topic,
             inline: false
           },
           {
-            name: 'Created At',
+            name: 'Criado em',
             value: channel.createdAt.toUTCString(),
             inline: true
           },
           {
-            name: 'Users',
+            name: 'Usuários',
             value: channel.members.size,
             inline: true
           }
