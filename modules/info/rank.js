@@ -13,7 +13,7 @@ exports.exec = async (ESXBot, message, args) => {
       rank = parseInt(profile.rank) + 1;
     }
 
-    let description = message.author.id === args.id ? `**${args.tag}** your rank is **${rank}** of ${profile.total}.` : `**${args.tag}**'s rank is **${rank}** of ${profile.total}.`;
+    let description = message.author.id === args.id ? `**${args.tag}** sua classificação é **${rank}** de ${profile.total}.` : `**${args.tag}** classificação é **${rank}** de ${profile.total}.`;
 
     message.channel.send({
       embed: {
