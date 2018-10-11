@@ -12,9 +12,9 @@ exports.exec = async (ESXBot, message) => {
       owners.push(user.tag);
     }
 
-    let shardStats = ESXBot.shard ? await ESXBot.shard.broadcastEval('this.uptime') : 'None';
+    let shardStats = ESXBot.shard ? await ESXBot.shard.broadcastEval('this.uptime') : 'Nenhum';
     if (shardStats instanceof Array) {
-      shardStats = shardStats.length === ESXBot.shard.count ? 'All shards online' : `Launched ${shardStats.length} / ${ESXBot.shard.count} shards`;
+      shardStats = shardStats.length === ESXBot.shard.count ? 'Todos os shards online' : `Launched ${shardStats.length} / ${ESXBot.shard.count} shards`;
     }
 
     let uptime = ESXBot.shard ? await ESXBot.shard.broadcastEval('this.uptime') : ESXBot.uptime;
@@ -70,7 +70,7 @@ exports.exec = async (ESXBot, message) => {
         url: ESXBot.package.url,
         fields: [
           {
-            name: 'Author',
+            name: 'Autor',
             value: `[${ESXBot.package.author}](${ESXBot.package.authorUrl})`,
             inline: true
           },
@@ -80,28 +80,28 @@ exports.exec = async (ESXBot, message) => {
             inline: true
           },
           {
-            name: `Owner${ESXBot.credentials.ownerId.length > 1 ? 's' : ''}`,
+            name: `Proprietário${ESXBot.credentials.ownerId.length > 1 ? 's' : ''}`,
             value: owners.join('\n'),
             inline: true
           },
           {
-            name: `Owner ID${ESXBot.credentials.ownerId.length > 1 ? 's' : ''}`,
+            name: `ID do proprietário${ESXBot.credentials.ownerId.length > 1 ? 's' : ''}`,
             value: ESXBot.credentials.ownerId.join('\n'),
             inline: true
           },
           {
-            name: 'Default Prefix',
+            name: 'Prefixo padrão',
             value: ESXBot.config.prefix,
             inline: true
           },
           {
-            name: 'Uptime',
+            name: 'Tempo de atividade',
             value: uptime,
             inline: true
           },
           {
             name: 'Shards',
-            value: ESXBot.shard ? `${ESXBot.shard.count} Shards` : 'None',
+            value: ESXBot.shard ? `${ESXBot.shard.count} Shards` : 'Nenhum',
             inline: true
           },
           {
@@ -110,10 +110,10 @@ exports.exec = async (ESXBot, message) => {
             inline: true
           },
           {
-            name: 'Presence',
-            value: `${guilds.toHumanString()} Servers\n`
-            + `${textChannels.toHumanString()} Text Channels\n`
-            + `${voiceChannels.toHumanString()} Voice Channels`,
+            name: 'Totais de Servidores e Canais',
+            value: `${guilds.toHumanString()} Servidores\n`
+            + `${textChannels.toHumanString()} Canais de texto\n`
+            + `${voiceChannels.toHumanString()} Canais de voz`,
             inline: true
           },
           {
