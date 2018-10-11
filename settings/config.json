@@ -1,0 +1,24 @@
+{
+  "shardCount": 1,
+  "prefix": "*!",
+  "status": "online",
+  "game": {
+    "type": "Playing",
+    "name": [
+      "*!ajudar para receber uma ajudar!",
+      "*!help for a help!",
+      "*!play + link I play a song for you!",
+      "*!donate donate and help us!",
+      "I'm always being updated!",
+      "See many news on my website!",
+      "Venha fazer parte da nossa equipe!",
+      "Come join our team!"
+    ],
+    "url": "",
+    "interval": 30
+  },
+  "music": {
+    "status": true,
+    "passes": 1
+  }
+}
