@@ -20,11 +20,11 @@ exports.exec = (ESXBot, message, args) => {
   message.channel.send({
     embed: {
       color: ESXBot.colors.BLUE,
-      title: 'Discriminator search',
-      description: `Found **${total}** users with discriminator **${args[0]}**`,
+      title: 'Pesquisa Discriminadora',
+      description: `Encontrado **${total}** usuários com discriminador **${args[0]}**`,
       fields: [
         {
-          name: 'Users',
+          name: 'Usuários',
           value: total > 10 ? `${members} and ${total - 10} more.` : members
         }
       ]
