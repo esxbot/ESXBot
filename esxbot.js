@@ -1,6 +1,6 @@
 /**
  * @file The starting point of ESXBot
- * @author Sankarsan Kampa (a.k.a k3rn31p4nic)
+ * @author Renildo Marcio (Kr Soluções Web)
  * @license MIT
  */
 
