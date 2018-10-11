@@ -1,6 +1,4 @@
 ### ESXBot BOT settings ###
-settings/credentials.json
-settings/config.json
 data/ESXBot.sqlite
 data/playlist.json
 data/backup*
