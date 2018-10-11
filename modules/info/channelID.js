@@ -15,7 +15,7 @@ exports.exec = (ESXBot, message) => {
       color: ESXBot.colors.BLUE,
       fields: [
         {
-          name: 'Channel',
+          name: 'Canal',
           value: `#${channel.name}`,
           inline: true
         },
