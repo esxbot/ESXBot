@@ -12,10 +12,10 @@ exports.exec = (ESXBot, message) => {
   message.channel.send({
     embed: {
       color: ESXBot.colors.BLUE,
-      title: 'Most used commands in this Server',
+      title: 'Comandos mais usados neste servidor',
       description: mostUsedCommands.join('\n'),
       footer: {
-        text: 'Command stats are cleared after restart.'
+        text: 'As estatísticas do comando são apagadas após o reinício.'
       }
     }
   }).catch(e => {
