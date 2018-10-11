@@ -1,5 +1,5 @@
 /**
- * @file The starting point of ESXBot
+ * @file The starting point of ESXBot.
  * @author Renildo Marcio (Kr Soluções Web)
  * @license MIT
  */
