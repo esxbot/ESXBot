@@ -16,23 +16,23 @@ exports.exec = async (ESXBot, message, args) => {
     if (!args.streamers) {
       if (twitchStreamers.length) {
         color = ESXBot.colors.BLUE;
-        title = 'Followed streamers';
+        title = 'Seguido streamers';
         description = twitchStreamers.join(', ');
       }
       else {
         color = ESXBot.colors.RED;
-        description = 'You\'re not following any streamers in this server.';
+        description = 'Você não está seguindo nenhuma transmissão neste servidor.';
       }
     }
     else {
       if (args.remove) {
         color = ESXBot.colors.RED;
-        title = 'Removed from followed streamers';
+        title = 'Removido de streamers seguidos';
         twitchStreamers = twitchStreamers.filter(streamer => args.streamers.indexOf(streamer) < 0);
       }
       else {
         color = ESXBot.colors.GREEN;
-        title = 'Added to followed streamers';
+        title = 'Adicionado às streamers seguidas';
         twitchStreamers = twitchStreamers.concat(args.streamers);
       }
       description = args.streamers.join(' ');
