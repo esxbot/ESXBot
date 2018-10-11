@@ -6,7 +6,7 @@
 
 exports.exec = async (ESXBot, message, args) => {
   try {
-    let description = `No role in your server has been set as the streamer role. To set a role as the streamer role, run the command \`${this.help.name} [ROLE_ID]\`.`, color = ESXBot.colors.RED;
+    let description = `Nenhuma função em seu servidor foi definida como a função de streamer. Para definir uma função como a função de streamer, execute o comando \`${this.help.name} [ROLE_ID]\`.`, color = ESXBot.colors.RED;
 
     if (args.role) {
       if (parseInt(args.message) >= 9223372036854775807) {
