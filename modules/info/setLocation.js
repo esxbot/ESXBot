@@ -30,7 +30,7 @@ exports.exec = async (ESXBot, message, args) => {
     if (!user) {
       return message.channel.send({
         embed: {
-          description: `<@${message.author.id}> you didn't had a profile yet. I've now created your profile. Now you can use the command again to set your location.`
+          description: `<@${message.author.id}> você ainda não tinha um perfil. Eu criei agora seu perfil. Agora você pode usar o comando novamente para definir sua localização.`
         }
       }).catch(e => {
         ESXBot.log.error(e);
@@ -42,7 +42,7 @@ exports.exec = async (ESXBot, message, args) => {
     message.channel.send({
       embed: {
         color: ESXBot.colors.GREEN,
-        title: 'Location Set',
+        title: 'Conjunto de locais',
         description: `${message.author.tag}, your location has been set to ${args.location}.`
       }
     }).catch(e => {
