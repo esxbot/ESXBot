@@ -7,7 +7,7 @@
 exports.exec = (ESXBot, message) => {
   try {
     if (!ESXBot.shard) {
-      return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'invalidUse'), 'ESXBot is not sharded. Run ESXBot using the sharding manager.', message.channel);
+      return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'invalidUse'), 'O ESXBot não está sharded. Execute o ESXBot usando o gerenciador de sharding.', message.channel);
     }
 
     let uptime = ESXBot.uptime;
@@ -42,7 +42,7 @@ exports.exec = (ESXBot, message) => {
             inline: true
           },
           {
-            name: 'Uptime',
+            name: 'Tempo de atividade',
             value: uptime,
             inline: true
           },
@@ -52,10 +52,10 @@ exports.exec = (ESXBot, message) => {
             inline: true
           },
           {
-            name: 'Presence',
-            value: `${ESXBot.guilds.size.toHumanString()} Servers\n`
-            + `${ESXBot.channels.filter(channel => channel.type === 'text').size.toHumanString()} Text Channels\n`
-            + `${ESXBot.channels.filter(channel => channel.type === 'voice').size.toHumanString()} Voice Channels`,
+            name: 'Totais de servidores e canais',
+            value: `${ESXBot.guilds.size.toHumanString()} Servidores\n`
+            + `${ESXBot.channels.filter(channel => channel.type === 'text').size.toHumanString()} Canais de texto\n`
+            + `${ESXBot.channels.filter(channel => channel.type === 'voice').size.toHumanString()} Canais de voz`,
             inline: true
           },
           {
