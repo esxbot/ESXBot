@@ -1,0 +1,17 @@
+{
+  "shardCount": 1,
+  "prefix": "*!",
+  "status": "online",
+  "game": {
+    "type": "Playing",
+    "name": [
+      "*!help for a help!"
+    ],
+    "url": "",
+    "interval": 30
+  },
+  "music": {
+    "status": true,
+    "passes": 1
+  }
+}
