@@ -59,8 +59,8 @@ exports.exec = async (ESXBot, message, args) => {
     message.channel.send({
       embed: {
         color: ESXBot.colors.GREEN,
-        title: 'Birth Date Set',
-        description: `See you on your Birthday, ${message.author.tag}!`
+        title: 'Conjunto de data de nascimento',
+        description: `Vejo você no seu aniversário, ${message.author.tag}!`
       }
     }).catch(e => {
       ESXBot.log.error(e);
