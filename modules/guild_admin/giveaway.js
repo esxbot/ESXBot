@@ -16,7 +16,7 @@ exports.exec = async (ESXBot, message, args) => {
 
       // Check if timeout is withing 24 hours
       if (args.timeout < 1 || args.timeout > 24) {
-        return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'invalidInput'), 'Giveaway can only run for at least an hour and at most 24 hours.', message.channel);
+        return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'invalidInput'), 'O sorteio só pode durar pelo menos uma hora e no máximo 24 horas.', message.channel);
       }
 
       // Generate a random reaction for the giveaway message
@@ -28,12 +28,12 @@ exports.exec = async (ESXBot, message, args) => {
         embed: {
           color: ESXBot.colors.BLUE,
           author: {
-            name: 'GIVEAWAY!'
+            name: 'Evento de doação!'
           },
           title: args.item,
           description: `React to this message with ${reaction} to participate.`,
           footer: {
-            text: `${args.winners} Winners • Ends`
+            text: `${args.winners} Vencedores • Termina`
           },
           timestamp: new Date(Date.now() + args.timeout * 60 * 60 * 1000)
         }
@@ -68,13 +68,13 @@ exports.exec = async (ESXBot, message, args) => {
               embed: {
                 color: ESXBot.colors.BLUE,
                 author: {
-                  name: 'GIVEAWAY Ended'
+                  name: 'Evento de doação Terminou'
                 },
                 title: args.item,
-                description: `The following users have won and will be contacted by ${message.author.tag} with their reward.\nThank you everyone for participating. Better luck next time.`,
+                description: `Os seguintes usuários ganharam e serão contatados por ${message.author.tag} com sua recompensa.\nAgradeço a todos pela participação. Mais sorte da próxima vez.`,
                 fields: [
                   {
-                    name: 'Winners',
+                    name: 'Vencedores',
                     value: winners.join('\n')
                   }
                 ],
@@ -93,10 +93,10 @@ exports.exec = async (ESXBot, message, args) => {
             giveawayMessage.edit({
               embed: {
                 color: ESXBot.colors.RED,
-                title: 'Giveaway Event Ended',
-                description: `Unfortunately, no one participated and apparently there's no winner for **${args.item}**. 😕`,
+                title: 'Evento de doação finalizado',
+                description: `Infelizmente, ninguém participou e aparentemente não há vencedor para **${args.item}**. 😕`,
                 footer: {
-                  text: `Giveaway ID: ${giveawayMessageID}`
+                  text: `ID do evento: ${giveawayMessageID}`
                 }
               }
             }).catch(e => {
@@ -119,7 +119,7 @@ exports.exec = async (ESXBot, message, args) => {
     }
     else if (args.reroll) {
       if (message.guild.giveaways.has(args.reroll)) {
-        return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'notFound'), 'That giveaway is currently running in this server. You can only reroll concluded or abruptly stopped giveaways.', message.channel);
+        return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'notFound'), 'Essa oferta está sendo executada neste servidor. Você só pode rolar novamente os brindes concluídos ou abruptamente parados.', message.channel);
       }
 
       // Fetch the giveaway message to get new reactions
@@ -152,18 +152,18 @@ exports.exec = async (ESXBot, message, args) => {
           embed: {
             color: ESXBot.colors.BLUE,
             author: {
-              name: 'GIVEAWAY Rerolled!'
+              name: 'Evento de doação revertido!'
             },
             title: giveawayItem,
-            description: `The following users have won and will be contacted by ${message.author.tag} with their reward.\nThank you everyone for participating. Better luck next time.`,
+            description: `Os seguintes usuários ganharam e serão contatados por ${message.author.tag} com sua recompensa.\nAgradeço a todos pela participação. Mais sorte da próxima vez.`,
             fields: [
               {
-                name: 'Winners',
+                name: 'Vencedores',
                 value: winners.join('\n')
               }
             ],
             footer: {
-              text: `Giveaway ID: ${giveawayMessage.id}`
+              text: `ID do evento: ${giveawayMessage.id}`
             }
           }
         }).catch(e => {
@@ -177,10 +177,10 @@ exports.exec = async (ESXBot, message, args) => {
         giveawayMessage.edit({
           embed: {
             color: ESXBot.colors.RED,
-            title: 'Giveaway Event Rerolled',
-            description: `Unfortunately, no one participated and apparently there's no winner for **${giveawayItem}**. 😕`,
+            title: 'Evento de doação revertido',
+            description: `Infelizmente, ninguém participou e aparentemente não há vencedor para **${giveawayItem}**. 😕`,
             footer: {
-              text: `Giveaway ID: ${giveawayMessage.id}`
+              text: `ID do evento: ${giveawayMessage.id}`
             }
           }
         }).catch(e => {
@@ -205,15 +205,15 @@ exports.exec = async (ESXBot, message, args) => {
         message.channel.send({
           embed: {
             color: ESXBot.colors.RED,
-            title: 'Giveaway Cancelled',
-            description: `The giveaway event with ID **${args.end}** has been cancelled by ${message.author.tag}`
+            title: 'Evento de doação Cancelado',
+            description: `O evento de doação com ID **${args.end}** foi cancelado por ${message.author.tag}`
           }
         }).catch(e => {
           ESXBot.log.error(e);
         });
       }
       else {
-        return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'notFound'), 'There\'s no giveaway running in this server right now.', message.channel);
+        return ESXBot.emit('error', ESXBot.strings.error(message.guild.language, 'notFound'), 'Não há brindes em execução neste servidor agora.', message.channel);
       }
     }
     else {
